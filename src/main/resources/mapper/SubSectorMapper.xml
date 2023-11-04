@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.harusame.bossrecruitment.mapper.SubSectorMapper">
+
+    <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.SubSector">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="subField" column="sub_field" jdbcType="VARCHAR"/>
+            <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,sub_field,parent_id
+    </sql>
+</mapper>
