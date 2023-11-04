@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.harusame.bossrecruitment.mapper.PositionMapper">
+
+    <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.Position">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="experience" column="experience" jdbcType="TINYINT"/>
+            <result property="workType" column="work_type" jdbcType="TINYINT"/>
+            <result property="salaryBottom" column="salary_bottom" jdbcType="CHAR"/>
+            <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
+            <result property="level" column="level" jdbcType="TINYINT"/>
+            <result property="major" column="major" jdbcType="VARCHAR"/>
+            <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+            <result property="exposure" column="exposure" jdbcType="TINYINT"/>
+            <result property="pStatus" column="p_status" jdbcType="TINYINT"/>
+            <result property="expireDate" column="expire_date" jdbcType="DATE"/>
+            <result property="compete" column="compete" jdbcType="TINYINT"/>
+            <result property="bossId" column="boss_id" jdbcType="INTEGER"/>
+            <result property="companyId" column="company_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,experience,
+        work_type,salary_bottom,salary_top,
+        level,major,city_name,
+        exposure,p_status,expire_date,
+        compete,boss_id,company_id
+    </sql>
+</mapper>
