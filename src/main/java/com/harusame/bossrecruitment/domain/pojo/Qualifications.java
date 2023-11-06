@@ -31,7 +31,7 @@ public class Qualifications implements Serializable {
      * 是否全日制
      */
     @TableField(value = "full_time")
-    private Integer fullTime;
+    private Boolean fullTime;
 
     /**
      * 学历

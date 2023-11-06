@@ -1,18 +1,23 @@
 package com.harusame.bossrecruitment.config;
 
 
+import com.harusame.bossrecruitment.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.annotation.Resource;
+
 @Configuration
 public class SpringMVCConfig implements WebMvcConfigurer {
 
+    @Resource
+    private LoginInterceptor loginInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(loginInterceptor)
-//                .addPathPatterns("/**");
+        registry.addInterceptor(loginInterceptor)
+                .addPathPatterns("/**");
 //        //需要管理员身份的接口的拦截器
 //        registry.addInterceptor(rootInterceptor)
 //                .addPathPatterns("/**");

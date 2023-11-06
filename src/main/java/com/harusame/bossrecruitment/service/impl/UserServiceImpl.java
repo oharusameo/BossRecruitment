@@ -9,6 +9,7 @@ import com.harusame.bossrecruitment.domain.pojo.User;
 import com.harusame.bossrecruitment.exception.BusinessException;
 import com.harusame.bossrecruitment.mapper.UserMapper;
 import com.harusame.bossrecruitment.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     private StringRedisTemplate stringRedisTemplate;
 
     @Override
+    public void updateUser(String id, Object object) {
+        User user = new User();
+        user.setId(Integer.valueOf(id));
+        BeanUtils.copyProperties(object, user);
+        userMapper.updateById(user);
+    }
+
+    @Override
     public String loginOrRegister(LoginDTO loginDTO) {
         String key = String.format(RedisKeyConst.USER_LOGIN_CAPTCHA, loginDTO.getCAPTCHA());
         Long expire = stringRedisTemplate.getExpire(key);
@@ -48,6 +57,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         userMapper.insert(user);
         return jwtUtils.generateToken(user.getId().toString());
     }
+
+
 }
 
 

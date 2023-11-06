@@ -7,7 +7,7 @@
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.User">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="gender" column="gender" jdbcType="CHAR"/>
+            <result property="gender" column="gender" jdbcType="TINYINT"/>
             <result property="role" column="role" jdbcType="TINYINT"/>
             <result property="phone" column="phone" jdbcType="CHAR"/>
             <result property="wechat" column="wechat" jdbcType="VARCHAR"/>

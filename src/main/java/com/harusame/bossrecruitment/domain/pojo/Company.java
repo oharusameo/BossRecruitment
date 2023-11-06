@@ -26,6 +26,10 @@ public class Company implements Serializable {
     @TableField(value = "company_name")
     private String companyName;
 
+    public Company(String companyName) {
+        this.companyName = companyName;
+    }
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

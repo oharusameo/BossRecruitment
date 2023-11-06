@@ -1,5 +1,6 @@
 package com.harusame.bossrecruitment.service;
 
+import com.harusame.bossrecruitment.domain.dto.CreateSeekerDTO;
 import com.harusame.bossrecruitment.domain.pojo.Seeker;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SeekerService extends IService<Seeker> {
 
+    void createSeeker(CreateSeekerDTO createSeekerDTO);
 }

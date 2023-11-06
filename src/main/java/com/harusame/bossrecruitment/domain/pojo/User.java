@@ -29,9 +29,10 @@ public class User implements Serializable {
 
     /**
      * 性别
+     * 1:男 2：女
      */
     @TableField(value = "gender")
-    private String gender;
+    private Integer gender;
 
     /**
      * 1:boss,2:seeker

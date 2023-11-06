@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/v1/login")
 @Api(tags = "登录接口", value = "LoginAPI")
-public class LoginAPI {
+public class LoginApi {
     @Resource
     private UserService userService;
 
@@ -39,6 +39,8 @@ public class LoginAPI {
     public Result loginOrRegister(@RequestBody @Valid LoginDTO loginDTO) {
         return Result.success(userService.loginOrRegister(loginDTO));
     }
-//    eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyIiwiZXhwIjoxNjk5ODQzOTM2fQ.RJ2y5gy44POKKJPn4Q16fOqPQNjwi8B3oK15Vz94ZXOOf533Z6HQYSCNSvariDp17gCwqGsD6iN5u80d3R8Fug
+//eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzIiwiZXhwIjoxNjk5ODU3MTc4fQ.x8TjmWYs2OvKw2YffS_SzJJAFOJbxfkhM5aEUXNR7GsC0Bfig1n_JL7D3AoIGXRyecS7XujtxwvXDAPMN4N4hQ
+
+
 }
 

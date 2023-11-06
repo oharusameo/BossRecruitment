@@ -1,5 +1,6 @@
 package com.harusame.bossrecruitment.service;
 
+import com.harusame.bossrecruitment.domain.dto.CreateCompanyDTO;
 import com.harusame.bossrecruitment.domain.pojo.Company;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface CompanyService extends IService<Company> {
 
+    void createCompany(CreateCompanyDTO createCompanyDTO);
 }
