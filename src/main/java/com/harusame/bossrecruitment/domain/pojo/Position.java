@@ -66,8 +66,13 @@ public class Position implements Serializable {
     /**
      * 地点
      */
-    @TableField(value = "city_name")
-    private String cityName;
+    @TableField(value = "location")
+    private String location;
+    /**
+     * 城市
+     */
+    @TableField(value = "city_id")
+    private Integer cityId;
 
     /**
      * 曝光度
@@ -128,7 +133,8 @@ public class Position implements Serializable {
             && (this.getSalaryTop() == null ? other.getSalaryTop() == null : this.getSalaryTop().equals(other.getSalaryTop()))
             && (this.getLevel() == null ? other.getLevel() == null : this.getLevel().equals(other.getLevel()))
             && (this.getMajor() == null ? other.getMajor() == null : this.getMajor().equals(other.getMajor()))
-            && (this.getCityName() == null ? other.getCityName() == null : this.getCityName().equals(other.getCityName()))
+            && (this.getLocation() == null? other.getLocation() == null : this.getLocation().equals(other.getLocation()))
+            && (this.getCityId() == null? other.getCityId() == null : this.getCityId().equals(other.getCityId()))
             && (this.getExposure() == null ? other.getExposure() == null : this.getExposure().equals(other.getExposure()))
             && (this.getExpireDate() == null ? other.getExpireDate() == null : this.getExpireDate().equals(other.getExpireDate()))
             && (this.getCompete() == null ? other.getCompete() == null : this.getCompete().equals(other.getCompete()))
@@ -148,11 +154,12 @@ public class Position implements Serializable {
         result = prime * result + ((getSalaryTop() == null) ? 0 : getSalaryTop().hashCode());
         result = prime * result + ((getLevel() == null) ? 0 : getLevel().hashCode());
         result = prime * result + ((getMajor() == null) ? 0 : getMajor().hashCode());
-        result = prime * result + ((getCityName() == null) ? 0 : getCityName().hashCode());
+        result = prime * result + ((getLocation() == null) ? 0 : getLocation().hashCode());
         result = prime * result + ((getExposure() == null) ? 0 : getExposure().hashCode());
         result = prime * result + ((getExpireDate() == null) ? 0 : getExpireDate().hashCode());
         result = prime * result + ((getCompete() == null) ? 0 : getCompete().hashCode());
         result = prime * result + ((getBossId() == null) ? 0 : getBossId().hashCode());
+        result = prime * result + ((getCityId() == null) ? 0 : getCityId().hashCode());
         result = prime * result + ((getCompanyId() == null) ? 0 : getCompanyId().hashCode());
         return result;
     }
@@ -171,7 +178,8 @@ public class Position implements Serializable {
         sb.append(", salaryTop=").append(salaryTop);
         sb.append(", level=").append(level);
         sb.append(", major=").append(major);
-        sb.append(", cityName=").append(cityName);
+        sb.append(", location=").append(location);
+        sb.append(", cityId=").append(cityId);
         sb.append(", exposure=").append(exposure);
         sb.append(", expireDate=").append(expireDate);
         sb.append(", compete=").append(compete);

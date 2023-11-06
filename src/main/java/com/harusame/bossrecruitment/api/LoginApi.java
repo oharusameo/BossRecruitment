@@ -39,8 +39,7 @@ public class LoginApi {
     public Result loginOrRegister(@RequestBody @Valid LoginDTO loginDTO) {
         return Result.success(userService.loginOrRegister(loginDTO));
     }
-//eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzIiwiZXhwIjoxNjk5ODU3MTc4fQ.x8TjmWYs2OvKw2YffS_SzJJAFOJbxfkhM5aEUXNR7GsC0Bfig1n_JL7D3AoIGXRyecS7XujtxwvXDAPMN4N4hQ
-
+//eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzIiwiYm9zc0lkIjoiMSIsImV4cCI6MTY5OTg2NzM4OH0.kA8_QPoq2vRQqGk_uBHG_eJQCzQYBV5cAFX6-Hf-haAOuKb3zgx9xmu_jQl9qHrig32ho1JI5fDPcsdwyRKMHg
 
 }
 

@@ -1,5 +1,6 @@
 package com.harusame.bossrecruitment.service;
 
+import com.harusame.bossrecruitment.domain.dto.AddPositionDTO;
 import com.harusame.bossrecruitment.domain.pojo.Position;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface PositionService extends IService<Position> {
 
+    void addPosition(AddPositionDTO addPositionDTO);
 }

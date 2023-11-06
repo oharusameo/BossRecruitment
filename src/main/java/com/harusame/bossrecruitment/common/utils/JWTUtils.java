@@ -35,6 +35,16 @@ public class JWTUtils {
                 .sign(algorithm);
     }
 
+    public String generateToken(String userId, String bossId) {
+        Algorithm algorithm = Algorithm.HMAC512(secret);
+        JWTCreator.Builder builder = JWT.create();
+        DateTime date = DateUtil.offset(new Date(), DateField.DAY_OF_YEAR, expire);
+        return builder.withClaim("userId", userId)
+                .withClaim("bossId", bossId)
+                .withExpiresAt(date)
+                .sign(algorithm);
+    }
+
     /**
      * 验证令牌合法性，如果不合法(假令牌或过期)会抛出异常
      *
@@ -53,5 +63,9 @@ public class JWTUtils {
         return decode.getClaim("userId").asString();
     }
 
+    public String getBossIdFromToken(String token) {
+        DecodedJWT decode = JWT.decode(token);
+        return decode.getClaim("bossId").asString();
+    }
 
 }

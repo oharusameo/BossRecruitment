@@ -13,7 +13,8 @@
             <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
             <result property="level" column="level" jdbcType="TINYINT"/>
             <result property="major" column="major" jdbcType="VARCHAR"/>
-            <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+            <result property="cityId" column="city_id" jdbcType="INTEGER"/>
+            <result property="location" column="location" jdbcType="VARCHAR"/>
             <result property="exposure" column="exposure" jdbcType="TINYINT"/>
             <result property="pStatus" column="p_status" jdbcType="TINYINT"/>
             <result property="expireDate" column="expire_date" jdbcType="DATE"/>
@@ -25,7 +26,7 @@
     <sql id="Base_Column_List">
         id,name,experience,
         work_type,salary_bottom,salary_top,
-        level,major,city_name,
+        level,major,location,city_id
         exposure,p_status,expire_date,
         compete,boss_id,company_id
     </sql>

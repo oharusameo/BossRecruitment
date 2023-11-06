@@ -5,8 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.harusame.bossrecruitment.common.constant.RedisKeyConst;
 import com.harusame.bossrecruitment.common.utils.JWTUtils;
 import com.harusame.bossrecruitment.domain.dto.LoginDTO;
+import com.harusame.bossrecruitment.domain.pojo.Boss;
 import com.harusame.bossrecruitment.domain.pojo.User;
 import com.harusame.bossrecruitment.exception.BusinessException;
+import com.harusame.bossrecruitment.mapper.BossMapper;
 import com.harusame.bossrecruitment.mapper.UserMapper;
 import com.harusame.bossrecruitment.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -25,6 +27,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         implements UserService {
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private BossMapper bossMapper;
     @Resource
     private JWTUtils jwtUtils;
     @Resource
@@ -48,6 +52,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         stringRedisTemplate.delete(key);
         User u = userMapper.selectOne(new QueryWrapper<User>().eq("phone", loginDTO.getPhone()).select("id"));
         if (u != null) {
+            Boss boss = bossMapper.selectOne(new QueryWrapper<Boss>().eq("user_id", u.getId()).select("id"));
+            if (boss != null) {
+                return jwtUtils.generateToken(u.getId().toString(), boss.getId().toString());
+            }
             return jwtUtils.generateToken(u.getId().toString());
         }
 

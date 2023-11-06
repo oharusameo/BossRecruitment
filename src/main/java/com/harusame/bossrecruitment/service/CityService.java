@@ -1,5 +1,6 @@
 package com.harusame.bossrecruitment.service;
 
+import com.harusame.bossrecruitment.domain.dto.AddCityDTO;
 import com.harusame.bossrecruitment.domain.pojo.City;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface CityService extends IService<City> {
 
+    void addCity(AddCityDTO addCityDTO);
 }

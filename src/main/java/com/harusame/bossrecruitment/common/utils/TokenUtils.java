@@ -21,5 +21,10 @@ public class TokenUtils {
         return jwtUtils.getUserIdFromToken(token);
     }
 
-
+    public String getBossIdFromHeader() {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = Objects.requireNonNull(attributes).getRequest();
+        String token = request.getHeader("token");
+        return jwtUtils.getBossIdFromToken(token);
+    }
 }
