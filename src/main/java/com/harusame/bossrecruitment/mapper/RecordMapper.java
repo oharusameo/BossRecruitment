@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  */
 public interface RecordMapper extends BaseMapper<Record> {
 
-    void addRecord(String id, String operation);
+    void addRecord(String userId, String operation);
 }
 
 

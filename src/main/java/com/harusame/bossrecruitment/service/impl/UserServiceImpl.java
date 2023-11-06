@@ -5,9 +5,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.harusame.bossrecruitment.common.constant.RedisKeyConst;
 import com.harusame.bossrecruitment.common.utils.JWTUtils;
 import com.harusame.bossrecruitment.domain.dto.LoginDTO;
+import com.harusame.bossrecruitment.domain.pojo.Balance;
 import com.harusame.bossrecruitment.domain.pojo.Boss;
 import com.harusame.bossrecruitment.domain.pojo.User;
 import com.harusame.bossrecruitment.exception.BusinessException;
+import com.harusame.bossrecruitment.mapper.BalanceMapper;
 import com.harusame.bossrecruitment.mapper.BossMapper;
 import com.harusame.bossrecruitment.mapper.UserMapper;
 import com.harusame.bossrecruitment.service.UserService;
@@ -33,6 +35,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     private JWTUtils jwtUtils;
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+    @Resource
+    private BalanceMapper balanceMapper;
 
     @Override
     public void updateUser(String id, Object object) {
@@ -63,6 +67,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         User user = new User();
         user.setPhone(loginDTO.getPhone());
         userMapper.insert(user);
+        //初始化用户余额
+        Balance balance = new Balance();
+        balance.setUserId(user.getId());
+        balanceMapper.insert(balance);
         return jwtUtils.generateToken(user.getId().toString());
     }
 

@@ -2,6 +2,7 @@ package com.harusame.bossrecruitment.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.harusame.bossrecruitment.domain.pojo.Record;
+import com.harusame.bossrecruitment.domain.vo.RecordVo;
 
 import java.math.BigDecimal;
 
@@ -12,5 +13,7 @@ import java.math.BigDecimal;
 */
 public interface RecordService extends IService<Record> {
 
-    void addRecord(String id, String operation, BigDecimal money);
+    void addRecord(String userId, String operation, BigDecimal money);
+
+    RecordVo viewRecords();
 }

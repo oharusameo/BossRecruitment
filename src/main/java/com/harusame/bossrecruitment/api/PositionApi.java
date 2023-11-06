@@ -27,4 +27,6 @@ public class PositionApi {
         positionService.addPosition(addPositionDTO);
         return Result.successMsg("发布职位成功");
     }
+
+
 }

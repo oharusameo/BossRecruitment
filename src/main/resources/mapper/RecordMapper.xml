@@ -17,6 +17,6 @@
     </sql>
     <insert id="addRecord">
         insert into t_record(user_id, operation)
-        values (#{id}, #{operation})
+        values (#{userId}, #{operation})
     </insert>
 </mapper>

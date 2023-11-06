@@ -1,6 +1,9 @@
 package com.harusame.bossrecruitment.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.harusame.bossrecruitment.common.utils.TokenUtils;
+import com.harusame.bossrecruitment.domain.vo.RecordVo;
 import com.harusame.bossrecruitment.mapper.RecordMapper;
 import com.harusame.bossrecruitment.service.RecordService;
 import org.springframework.stereotype.Service;
@@ -8,6 +11,7 @@ import com.harusame.bossrecruitment.domain.pojo.Record;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author ggzst
@@ -19,11 +23,22 @@ public class RecordServiceImpl extends ServiceImpl<RecordMapper, Record>
         implements RecordService {
     @Resource
     private RecordMapper recordMapper;
+    @Resource
+    private TokenUtils tokenUtils;
 
     @Override
-    public void addRecord(String id, String operation, BigDecimal money) {
+    public void addRecord(String userId, String operation, BigDecimal money) {
         operation = String.format("%s%s元", operation, money);
-        recordMapper.addRecord(id, operation);
+        recordMapper.addRecord(userId, operation);
+    }
+
+    @Override
+    public RecordVo viewRecords() {
+        String userId = tokenUtils.getUserIdFromHeader();
+        List<Record> records = recordMapper.selectList(new QueryWrapper<Record>().eq("user_id", userId));
+        RecordVo recordVo = new RecordVo();
+        recordVo.setRecordList(records);
+        return recordVo;
     }
 }
 
