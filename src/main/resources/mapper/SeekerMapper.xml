@@ -5,16 +5,16 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.SeekerMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.Seeker">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="availability" column="availability" jdbcType="TINYINT"/>
-            <result property="identity" column="identity" jdbcType="TINYINT"/>
-            <result property="level" column="level" jdbcType="TINYINT"/>
-            <result property="userId" column="user_id" jdbcType="INTEGER"/>
-            <result property="birthday" column="birthday" jdbcType="DATE"/>
-            <result property="cityId" column="city_id" jdbcType="INTEGER"/>
-            <result property="position" column="position" jdbcType="VARCHAR"/>
-            <result property="advantage" column="advantage" jdbcType="VARCHAR"/>
-            <result property="firstEmployedDate" column="first_employed_date" jdbcType="DATE"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="availability" column="availability" jdbcType="TINYINT"/>
+        <result property="identity" column="identity" jdbcType="TINYINT"/>
+        <result property="level" column="level" jdbcType="TINYINT"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="birthday" column="birthday" jdbcType="DATE"/>
+        <result property="cityId" column="city_id" jdbcType="INTEGER"/>
+        <result property="position" column="position" jdbcType="VARCHAR"/>
+        <result property="advantage" column="advantage" jdbcType="VARCHAR"/>
+        <result property="firstEmployedDate" column="first_employed_date" jdbcType="DATE"/>
     </resultMap>
 
     <sql id="Base_Column_List">

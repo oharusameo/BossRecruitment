@@ -5,10 +5,10 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.SeekerCityMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.SeekerCity">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="seekerId" column="seeker_id" jdbcType="VARCHAR"/>
-            <result property="cityId" column="city_id" jdbcType="VARCHAR"/>
-            <result property="weight" column="weight" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="seekerId" column="seeker_id" jdbcType="VARCHAR"/>
+        <result property="cityId" column="city_id" jdbcType="VARCHAR"/>
+        <result property="weight" column="weight" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">

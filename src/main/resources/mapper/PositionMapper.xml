@@ -5,22 +5,22 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.PositionMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.Position">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="experience" column="experience" jdbcType="TINYINT"/>
-            <result property="workType" column="work_type" jdbcType="TINYINT"/>
-            <result property="salaryBottom" column="salary_bottom" jdbcType="CHAR"/>
-            <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
-            <result property="level" column="level" jdbcType="TINYINT"/>
-            <result property="major" column="major" jdbcType="VARCHAR"/>
-            <result property="cityId" column="city_id" jdbcType="INTEGER"/>
-            <result property="location" column="location" jdbcType="VARCHAR"/>
-            <result property="exposure" column="exposure" jdbcType="TINYINT"/>
-            <result property="pStatus" column="p_status" jdbcType="TINYINT"/>
-            <result property="expireDate" column="expire_date" jdbcType="DATE"/>
-            <result property="compete" column="compete" jdbcType="TINYINT"/>
-            <result property="bossId" column="boss_id" jdbcType="INTEGER"/>
-            <result property="companyId" column="company_id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="experience" column="experience" jdbcType="TINYINT"/>
+        <result property="workType" column="work_type" jdbcType="TINYINT"/>
+        <result property="salaryBottom" column="salary_bottom" jdbcType="CHAR"/>
+        <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
+        <result property="level" column="level" jdbcType="TINYINT"/>
+        <result property="major" column="major" jdbcType="VARCHAR"/>
+        <result property="cityId" column="city_id" jdbcType="INTEGER"/>
+        <result property="location" column="location" jdbcType="VARCHAR"/>
+        <result property="exposure" column="exposure" jdbcType="TINYINT"/>
+        <result property="pStatus" column="p_status" jdbcType="TINYINT"/>
+        <result property="expireDate" column="expire_date" jdbcType="DATE"/>
+        <result property="compete" column="compete" jdbcType="TINYINT"/>
+        <result property="bossId" column="boss_id" jdbcType="INTEGER"/>
+        <result property="companyId" column="company_id" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">

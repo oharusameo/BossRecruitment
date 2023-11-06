@@ -5,8 +5,8 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.CompanyMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.Company">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="companyName" column="company_name" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="companyName" column="company_name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">

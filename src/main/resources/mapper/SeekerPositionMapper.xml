@@ -5,13 +5,13 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.SeekerPositionMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.SeekerPosition">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="salaryBottom" column="salary_bottom" jdbcType="CHAR"/>
-            <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
-            <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
-            <result property="positionId" column="position_id" jdbcType="INTEGER"/>
-            <result property="userId" column="user_id" jdbcType="INTEGER"/>
-            <result property="subSectorId" column="sub_sector_id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="salaryBottom" column="salary_bottom" jdbcType="CHAR"/>
+        <result property="salaryTop" column="salary_top" jdbcType="CHAR"/>
+        <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+        <result property="positionId" column="position_id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="subSectorId" column="sub_sector_id" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">

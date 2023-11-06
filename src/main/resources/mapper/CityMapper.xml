@@ -5,8 +5,8 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.CityMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.City">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">

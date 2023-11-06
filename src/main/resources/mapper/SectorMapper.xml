@@ -5,8 +5,8 @@
 <mapper namespace="com.harusame.bossrecruitment.mapper.SectorMapper">
 
     <resultMap id="BaseResultMap" type="com.harusame.bossrecruitment.domain.pojo.Sector">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="parentField" column="parent_field" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="parentField" column="parent_field" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
