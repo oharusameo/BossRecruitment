@@ -1,9 +1,9 @@
-package com.harusame.bossrecruitment.common.constant.utils;
+package com.harusame.bossrecruitment.common.utils;
 
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.quxue.template.exception.BusinessException;
+import com.harusame.bossrecruitment.exception.BusinessException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

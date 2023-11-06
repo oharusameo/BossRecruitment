@@ -1,5 +1,6 @@
 package com.harusame.bossrecruitment.service;
 
+import com.harusame.bossrecruitment.domain.dto.LoginDTO;
 import com.harusame.bossrecruitment.domain.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserService extends IService<User> {
 
+    String loginOrRegister(LoginDTO loginDTO);
 }

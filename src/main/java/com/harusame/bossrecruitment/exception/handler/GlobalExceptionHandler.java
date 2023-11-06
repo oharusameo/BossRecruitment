@@ -1,10 +1,13 @@
-package com.harusame.bossrecruitment.handler;
+package com.harusame.bossrecruitment.exception.handler;
 
 
 import cn.hutool.json.JSONUtil;
 import com.auth0.jwt.exceptions.JWTDecodeException;
+import com.harusame.bossrecruitment.domain.pojo.Result;
+import com.harusame.bossrecruitment.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.omg.CORBA.SystemException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.List;
 
+import static cn.hutool.http.HttpStatus.*;
+
 @RestControllerAdvice
 @Component
 @Slf4j
@@ -23,7 +28,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
     public Result exceptionHandler(Exception exception) {
-
         if (exception instanceof MethodArgumentNotValidException) {
             MethodArgumentNotValidException e = (MethodArgumentNotValidException) exception;
             //获取异常相应结果

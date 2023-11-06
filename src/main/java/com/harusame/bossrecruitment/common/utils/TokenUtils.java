@@ -12,7 +12,7 @@ import java.util.Objects;
 @Component
 public class TokenUtils {
     @Resource
-    JWTUtils jwtUtils;
+    private JWTUtils jwtUtils;
 
     public String getUserIdFromHeader() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -21,10 +21,5 @@ public class TokenUtils {
         return jwtUtils.getUserIdFromToken(token);
     }
 
-    public String getTenantIdFromHeader() {
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = Objects.requireNonNull(attributes).getRequest();
-        String token = request.getHeader("token");
-        return jwtUtils.getTenantIdFromToken(token);
-    }
+
 }
